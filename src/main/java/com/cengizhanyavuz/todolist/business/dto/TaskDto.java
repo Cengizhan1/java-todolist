@@ -28,7 +28,6 @@ public class TaskDto extends AuditingAwareBaseDto implements Serializable {
 
     public static final Long serialVersionUID=1L;
 
-    @UniqueTaskName
     @NotEmpty(message = "{task.name.validation.constraints.NotNull.message}")
     @Size(min=2,message = "{task.name.least.validation.constraints.NotNull.message}")
     private String taskName;

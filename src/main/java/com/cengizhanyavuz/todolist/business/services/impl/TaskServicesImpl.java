@@ -23,22 +23,6 @@ import java.util.List;
 @Service
 public class TaskServicesImpl implements ITaskServices<TaskDto, TaskEntity> {
 
-    // Injection (Field) => 1.YOL
-    /*
-    @Autowired
-    private iTaskRepository iTaskRepository;
-    */
-
-    // Injection (Constructor Field) => 2.YOL
-    /*
-    private final iTaskRepository iTaskRepository;
-    @Autowired
-    public CategoryServicesImpl(iTaskRepository iTaskRepository) {
-        this.iTaskRepository = iTaskRepository;
-    }
-    */
-
-    // Injection (Lombok Constructor Field) => 3.YOL
     private final ITaskRepository iTaskRepository;
     private final ModelMapperBean modelMapperBean;
 
@@ -73,7 +57,6 @@ public class TaskServicesImpl implements ITaskServices<TaskDto, TaskEntity> {
     @Override
     public List<TaskDto> taskServiceList() {
         Iterable<TaskEntity> entityIterable=  iTaskRepository.findAll();
-        // Dto To entityb List
         List<TaskDto> taskDtoList=new ArrayList<>();
         for (TaskEntity entity:  entityIterable) {
             TaskDto taskDto=entityToDto(entity);
@@ -86,16 +69,6 @@ public class TaskServicesImpl implements ITaskServices<TaskDto, TaskEntity> {
     // FIND
     @Override
     public TaskDto taskServiceFindById(Long id) {
-        // 1.YOL (FIND)
-        /*
-        Optional<CategoryEntity> findOptionalCategoryEntity=  iTaskRepository.findById(id);
-        CategoryDto categoryDto=entityToDto(findOptionalCategoryEntity.get());
-        if(findOptionalCategoryEntity.isPresent()){
-            return categoryDto;
-        }
-        */
-
-        // 2.YOL (FIND)
         TaskEntity findTaskEntity=  null;
         if(id!=null){
             findTaskEntity=  iTaskRepository.findById(id)
