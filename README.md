@@ -40,7 +40,8 @@ The project will run by default at http://localhost:3000
 You can find the API documentation here.
 It provides detailed information on available routes and their usage.
 
-http://localhost:4444/swagger-ui/index.html
+postman : https://documenter.getpostman.com/view/16991416/2s9Y5cu18L \
+swagger : http://localhost:4444/swagger-ui/index.html
 
 ## Contributers
 Cengizhan Yavuz \
