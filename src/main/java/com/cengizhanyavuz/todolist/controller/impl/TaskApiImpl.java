@@ -5,6 +5,7 @@ import com.cengizhanyavuz.todolist.business.dto.TaskDto;
 import com.cengizhanyavuz.todolist.business.services.ITaskServices;
 import com.cengizhanyavuz.todolist.controller.ITaskApi;
 import jakarta.validation.Valid;
+import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.http.HttpStatus;

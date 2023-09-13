@@ -21,7 +21,6 @@ import java.util.List;
 @AllArgsConstructor
 @Entity
 @Table(name = "tasks")
-
 public class TaskEntity extends AuditingAwareBaseEntity implements Serializable {
 
     public static final Long serialVersionUID = 1L;
