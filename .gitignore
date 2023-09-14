@@ -31,3 +31,9 @@ build/
 
 ### VS Code ###
 .vscode/
+
+# Frontend klasörü
+/frontend/
+
+# Node_modules hariç tutuluyor
+/frontend/node_modules/
