@@ -24,14 +24,14 @@ function TaskUpdate({ t }) {
     const [id, setID] = useState(null);
     const [taskName, setTaskName] = useState('');
     const [taskDescription, setTaskDescription] = useState('');
-    const [taskState, setTaskState] = useState('');
+    const [state, setTaskState] = useState('');
     const [priorityLevel, setPriorityLevel] = useState('');
     const [dueDate, setDueDate] = useState('');
     const [tags, setTags] = useState('');
     const [error, setError] = useState({
         taskName: '',
         taskDescription: '',
-        taskState: '',
+        state: '',
         priorityLevel: '',
         dueDate: '',
         tags: '',
@@ -51,7 +51,7 @@ function TaskUpdate({ t }) {
                 console.log(response.data);
                 setTaskName(response.data.taskName);
                 setTaskDescription(response.data.taskDescription);
-                setTaskState(response.data.taskState);
+                setTaskState(response.data.state);
                 setPriorityLevel(response.data.priorityLevel);
                 setDueDate(response.data.dueDate);
                 setTags(response.data.tags);
@@ -68,7 +68,7 @@ function TaskUpdate({ t }) {
         const newTask = {
             taskName,
             taskDescription,
-            taskState,
+            state,
             priorityLevel,
             dueDate,
             tags,
@@ -78,7 +78,7 @@ function TaskUpdate({ t }) {
         setError({
             taskName: '',
             taskDescription: '',
-            taskState: '',
+            state: '',
             priorityLevel: '',
             dueDate: '',
             tags: '',
@@ -143,10 +143,10 @@ function TaskUpdate({ t }) {
                     <span>{t('task_state')}</span>
                     <select
                         className="form-control"
-                        id="taskState"
-                        name="taskState"
+                        id="state"
+                        name="state"
                         onChange={(event) => { setTaskState(event.target.value) }}
-                        value={taskState}
+                        value={state}
                     >
                         {Object.values(TaskState).map((state) => (
                             <option key={state} value={state}>
@@ -154,9 +154,9 @@ function TaskUpdate({ t }) {
                             </option>
                         ))}
                     </select>
-                    {error.taskState && (
+                    {error.state && (
                         <div className="alert alert-danger" role="alert">
-                            {error.taskState}
+                            {error.state}
                         </div>
                     )}
                 </div>

@@ -2,7 +2,7 @@ package com.cengizhanyavuz.todolist.data.entity;
 
 import com.cengizhanyavuz.todolist.auditing.AuditingAwareBaseEntity;
 import com.cengizhanyavuz.todolist.enums.PriorityLevel;
-import com.cengizhanyavuz.todolist.enums.TaskState;
+import com.cengizhanyavuz.todolist.enums.State;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -12,7 +12,6 @@ import org.hibernate.annotations.CreationTimestamp;
 
 import java.io.Serializable;
 import java.util.Date;
-import java.util.List;
 
 // LOMBOK
 @Data
@@ -38,7 +37,7 @@ public class TaskEntity extends AuditingAwareBaseEntity implements Serializable 
 
     @Enumerated(EnumType.STRING)
     @Column(name = "task_state")
-    private TaskState taskState;
+    private State state;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "priority_level")
@@ -49,6 +48,14 @@ public class TaskEntity extends AuditingAwareBaseEntity implements Serializable 
 
     @Column(name = "tags")
     private String tags;
+
+    @ManyToOne
+    @JoinColumn(name = "project_id", referencedColumnName = "project_id")
+    private ProjectEntity project;
+
+    @ManyToOne(fetch = FetchType.LAZY,optional = false)
+    @JoinColumn(name="project_id",nullable = false)
+    private ProjectEntity relationProject;
 
 
     // DATE

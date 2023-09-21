@@ -1,6 +1,6 @@
 package com.cengizhanyavuz.todolist.data.repository;
 
-import com.cengizhanyavuz.todolist.data.entity.TaskEntity;
+import com.cengizhanyavuz.todolist.data.entity.ProjectEntity;
 import com.cengizhanyavuz.todolist.enums.State;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
@@ -8,9 +8,9 @@ import org.springframework.stereotype.Repository;
 import java.util.Optional;
 
 @Repository
-public interface ITaskRepository extends CrudRepository<TaskEntity,Long> {
+public interface IProjectRepository extends CrudRepository<ProjectEntity,Long> {
 
-    Optional<TaskEntity> findByTaskName(String taskName);
-    void deleteByTaskState(State state);
+    Optional<ProjectEntity> findByProjectName(String projectName);
+    void deleteByProjectState(State state);
 
 }

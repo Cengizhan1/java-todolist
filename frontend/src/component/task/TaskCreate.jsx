@@ -21,14 +21,14 @@ function TaskCreate({ t }) {
   // STATE
   const [taskName, setTaskName] = useState('');
   const [taskDescription, setTaskDescription] = useState('');
-  const [taskState, setTaskState] = useState('');
+  const [state, setTaskState] = useState('');
   const [priorityLevel, setPriorityLevel] = useState('');
   const [dueDate, setDueDate] = useState('');
   const [tags, setTags] = useState('');
   const [error, setError] = useState({
     taskName: '',
     taskDescription: '',
-    taskState: '',
+    state: '',
     priorityLevel: '',
     dueDate: '',
     tags: '',
@@ -49,7 +49,7 @@ function TaskCreate({ t }) {
     const newTask = {
       taskName,
       taskDescription,
-      taskState,
+      state,
       priorityLevel,
       dueDate,
       tags,
@@ -59,7 +59,7 @@ function TaskCreate({ t }) {
     setError({
       taskName: '',
       taskDescription: '',
-      taskState: '',
+      state: '',
       priorityLevel: '',
       dueDate: '',
       tags: '',
@@ -85,7 +85,7 @@ function TaskCreate({ t }) {
       setTaskName(value);
     } else if (name === "taskDescription") {
       setTaskDescription(value);
-    } else if (name === "taskState") {
+    } else if (name === "state") {
       setTaskState(value);
     } else if (name === "priorityLevel") {
       setPriorityLevel(value);
@@ -145,9 +145,9 @@ function TaskCreate({ t }) {
             <select
                 className="form-control"
                 required={true}
-                id="taskState"
-                name="taskState"
-                value={taskState}
+                id="state"
+                name="state"
+                value={state}
                 onChange={taskOnChange}
             >
               {Object.values(TaskState).map((state) => (
@@ -156,9 +156,9 @@ function TaskCreate({ t }) {
                   </option>
               ))}
             </select>
-            {error.taskState && (
+            {error.state && (
                 <div className="alert alert-danger" role="alert">
-                  {error.taskState}
+                  {error.state}
                 </div>
             )}
           </div>

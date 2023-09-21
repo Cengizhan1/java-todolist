@@ -13,7 +13,7 @@ import java.lang.annotation.Target;
 @Constraint(validatedBy = {UniqueTaskValidation.class})
 public @interface UniqueTaskName {
 
-    String message() default "{task.name.unique.validation.constraints.NotNull.message}";
+    String message() default "{name.unique.validation.constraints.NotNull.message}";
     Class<?>[] groups() default {};
     Class<? extends Payload>[] payload() default {};
 }

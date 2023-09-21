@@ -5,7 +5,7 @@ import com.cengizhanyavuz.todolist.business.dto.TaskDto;
 import com.cengizhanyavuz.todolist.business.services.ITaskServices;
 import com.cengizhanyavuz.todolist.data.entity.TaskEntity;
 import com.cengizhanyavuz.todolist.data.repository.ITaskRepository;
-import com.cengizhanyavuz.todolist.enums.TaskState;
+import com.cengizhanyavuz.todolist.enums.State;
 import com.cengizhanyavuz.todolist.exception.CustomException;
 import com.cengizhanyavuz.todolist.exception.ResourceNotFoundException;
 import lombok.RequiredArgsConstructor;
@@ -89,7 +89,7 @@ public class TaskServicesImpl implements ITaskServices<TaskDto, TaskEntity> {
             TaskEntity taskEntity=dtoToEntity(taskFindDto);
             taskEntity.setTaskName(taskDto.getTaskName());
             taskEntity.setTaskDescription(taskDto.getTaskDescription());
-            taskEntity.setTaskState(taskDto.getTaskState());
+            taskEntity.setState(taskDto.getState());
             taskEntity.setPriorityLevel(taskDto.getPriorityLevel());
             taskEntity.setDueDate(taskDto.getDueDate());
             taskEntity.setTags(taskDto.getTags());
@@ -121,7 +121,7 @@ public class TaskServicesImpl implements ITaskServices<TaskDto, TaskEntity> {
     @Override
     @Transactional // create, delete, update
     public TaskDto taskServiceDeleteDone() {
-        iTaskRepository.deleteByTaskState(TaskState.DONE);
+        iTaskRepository.deleteByTaskState(State.DONE);
         return null;
     }
 

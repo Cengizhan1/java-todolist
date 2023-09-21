@@ -23,17 +23,15 @@ import java.util.Date;
 // Validation
 
 // CategoryDto(1) - BlogDto(N)
-public class TaskDto extends AuditingAwareBaseDto implements Serializable {
+public class ProjectDto extends AuditingAwareBaseDto implements Serializable {
 
     public static final Long serialVersionUID=1L;
 
     @NotEmpty(message = "{name.validation.constraints.NotNull.message}")
     @Size(min=2,message = "{name.least.validation.constraints.NotNull.message}")
-    private String taskName;
+    private String projectName;
     @NotEmpty
-    private String taskDescription;
+    private String projectDescription;
     private State state;
-    private PriorityLevel priorityLevel;
     private Date dueDate;
-    private String tags;
 }
