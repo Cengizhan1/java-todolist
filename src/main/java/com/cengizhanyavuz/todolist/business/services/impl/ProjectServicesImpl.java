@@ -49,7 +49,10 @@ public class ProjectServicesImpl implements IProjectServices<ProjectDto, Project
     public ProjectDto projectServiceCreate(ProjectDto projectDto) {
         if(projectDto!=null){
             ProjectEntity projectEntity=dtoToEntity(projectDto);
+            log.info("qwdqwdqd");
             iProjectRepository.save(projectEntity);
+            log.info("dfkbmdfbklmdö");
+
             projectDto.setId(projectEntity.getProjectId());
 //            projectDto.setSystemDate(projectEntity.getSystemDate());
         }else{

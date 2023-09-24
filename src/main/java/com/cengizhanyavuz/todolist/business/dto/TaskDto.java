@@ -36,4 +36,5 @@ public class TaskDto extends AuditingAwareBaseDto implements Serializable {
     private PriorityLevel priorityLevel;
     private Date dueDate;
     private String tags;
+    private Long projectId;
 }

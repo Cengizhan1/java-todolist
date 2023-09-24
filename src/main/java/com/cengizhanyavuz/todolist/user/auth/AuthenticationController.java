@@ -6,7 +6,8 @@ import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import java.io.IOException;
 
 @RestController
@@ -16,19 +17,32 @@ import java.io.IOException;
 public class AuthenticationController {
 
   private final AuthenticationService service;
+  private static final Logger logger = LoggerFactory.getLogger(AuthenticationController.class);
+
 
   @PostMapping("/register")
   public ResponseEntity<AuthenticationResponse> register(
       @RequestBody RegisterRequest request
   ) {
-    return ResponseEntity.ok(service.register(request));
+    try {
+      return ResponseEntity.ok(service.register(request));
+    } catch (Exception e) {
+      logger.error("register method threw an exception", e);
+      throw e;
+    }
   }
   @PostMapping("/authenticate")
   public ResponseEntity<AuthenticationResponse> authenticate(
       @RequestBody AuthenticationRequest request
   ) {
-    return ResponseEntity.ok(service.authenticate(request));
+    try {
+      return ResponseEntity.ok(service.authenticate(request));
+    } catch (Exception e) {
+      logger.error("authenticate method threw an exception", e);
+      throw e;
+    }
   }
+
 
   @PostMapping("/refresh-token")
   public void refreshToken(

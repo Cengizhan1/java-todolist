@@ -11,6 +11,6 @@ import java.util.Optional;
 public interface ITaskRepository extends CrudRepository<TaskEntity,Long> {
 
     Optional<TaskEntity> findByTaskName(String taskName);
-    void deleteByTaskState(State state);
+    void deleteByState(State state);
 
 }

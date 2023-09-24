@@ -49,13 +49,11 @@ public class TaskEntity extends AuditingAwareBaseEntity implements Serializable 
     @Column(name = "tags")
     private String tags;
 
-    @ManyToOne
-    @JoinColumn(name = "project_id", referencedColumnName = "project_id")
-    private ProjectEntity project;
 
-    @ManyToOne(fetch = FetchType.LAZY,optional = false)
+    //  RELATION
+    @ManyToOne(optional = false)
     @JoinColumn(name="project_id",nullable = false)
-    private ProjectEntity relationProject;
+    private ProjectEntity relationProjectEntity;
 
 
     // DATE

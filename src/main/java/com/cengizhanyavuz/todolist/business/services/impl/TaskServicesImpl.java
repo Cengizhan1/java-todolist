@@ -4,6 +4,7 @@ import com.cengizhanyavuz.todolist.bean.ModelMapperBean;
 import com.cengizhanyavuz.todolist.business.dto.TaskDto;
 import com.cengizhanyavuz.todolist.business.services.ITaskServices;
 import com.cengizhanyavuz.todolist.data.entity.TaskEntity;
+import com.cengizhanyavuz.todolist.data.repository.IProjectRepository;
 import com.cengizhanyavuz.todolist.data.repository.ITaskRepository;
 import com.cengizhanyavuz.todolist.enums.State;
 import com.cengizhanyavuz.todolist.exception.CustomException;
@@ -25,6 +26,7 @@ public class TaskServicesImpl implements ITaskServices<TaskDto, TaskEntity> {
 
     private final ITaskRepository iTaskRepository;
     private final ModelMapperBean modelMapperBean;
+    private final IProjectRepository iProjectRepository;
 
 
     // MODEL MAPPER
@@ -44,9 +46,11 @@ public class TaskServicesImpl implements ITaskServices<TaskDto, TaskEntity> {
     public TaskDto taskServiceCreate(TaskDto taskDto) {
         if(taskDto!=null){
             TaskEntity taskEntity=dtoToEntity(taskDto);
+            taskEntity.setRelationProjectEntity(iProjectRepository.findById(taskDto.getProjectId()).get());
             iTaskRepository.save(taskEntity);
             taskDto.setId(taskEntity.getTaskId());
-            taskDto.setSystemDate(taskEntity.getSystemDate());
+            taskDto.setTaskName(taskDto.getTaskName());
+            taskDto.setTaskDescription(taskDto.getTaskDescription());
         }else{
             throw  new NullPointerException( " TaskDto null veri");
         }
@@ -121,7 +125,7 @@ public class TaskServicesImpl implements ITaskServices<TaskDto, TaskEntity> {
     @Override
     @Transactional // create, delete, update
     public TaskDto taskServiceDeleteDone() {
-        iTaskRepository.deleteByTaskState(State.DONE);
+        iTaskRepository.deleteByState(State.DONE);
         return null;
     }
 

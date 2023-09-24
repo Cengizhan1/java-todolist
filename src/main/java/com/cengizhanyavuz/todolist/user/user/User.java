@@ -25,13 +25,15 @@ public class User implements UserDetails {
   private Integer id;
   private String firstname;
   private String lastname;
+
+  @Column(unique = true)
   private String email;
   private String password;
 
   @Enumerated(EnumType.STRING)
   private Role role;
 
-  @OneToMany(mappedBy = "user")
+  @OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
   private List<Token> tokens;
 
   @Override
@@ -67,5 +69,16 @@ public class User implements UserDetails {
   @Override
   public boolean isEnabled() {
     return true;
+  }
+
+  public String toString() {
+    return "User{" +
+            "id=" + id +
+            ", firstname='" + firstname + '\'' +
+            ", lastname='" + lastname + '\'' +
+            ", email='" + email + '\'' +
+            ", password='" + password + '\'' +
+            ", role=" + role +
+            '}';
   }
 }

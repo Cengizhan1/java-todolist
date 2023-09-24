@@ -38,6 +38,7 @@ public class ProjectEntity  extends AuditingAwareBaseEntity implements Serializa
     @Column(name = "due_date")
     private Date dueDate;
 
-    @OneToMany(mappedBy = "relationProjectTaks",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
-    List<TaskEntity> relationProjectTaks;
+    @OneToMany(mappedBy = "relationProjectEntity", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    List<TaskEntity> relationTaskEntityList;
+
 }
