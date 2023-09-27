@@ -1,6 +1,5 @@
-package com.cengizhanyavuz.todolist.user.user;
+package com.cengizhanyavuz.todolist.data.entity;
 
-import com.cengizhanyavuz.todolist.user.token.Token;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

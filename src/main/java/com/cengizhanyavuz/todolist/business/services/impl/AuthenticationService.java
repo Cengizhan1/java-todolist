@@ -1,12 +1,15 @@
-package com.cengizhanyavuz.todolist.user.auth;
+package com.cengizhanyavuz.todolist.business.services.impl;
 
 
-import com.cengizhanyavuz.todolist.user.config.JwtService;
-import com.cengizhanyavuz.todolist.user.token.Token;
-import com.cengizhanyavuz.todolist.user.token.TokenRepository;
-import com.cengizhanyavuz.todolist.user.token.TokenType;
-import com.cengizhanyavuz.todolist.user.user.User;
-import com.cengizhanyavuz.todolist.user.user.UserRepository;
+import com.cengizhanyavuz.todolist.auth.AuthenticationRequest;
+import com.cengizhanyavuz.todolist.auth.AuthenticationResponse;
+import com.cengizhanyavuz.todolist.auth.RegisterRequest;
+import com.cengizhanyavuz.todolist.config.JwtService;
+import com.cengizhanyavuz.todolist.data.entity.Token;
+import com.cengizhanyavuz.todolist.data.repository.TokenRepository;
+import com.cengizhanyavuz.todolist.enums.TokenType;
+import com.cengizhanyavuz.todolist.data.entity.User;
+import com.cengizhanyavuz.todolist.data.repository.UserRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;

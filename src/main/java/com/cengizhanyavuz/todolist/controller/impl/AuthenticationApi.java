@@ -1,6 +1,10 @@
-package com.cengizhanyavuz.todolist.user.auth;
+package com.cengizhanyavuz.todolist.controller.impl;
 
 import com.cengizhanyavuz.todolist.assist.FrontendUrl;
+import com.cengizhanyavuz.todolist.auth.AuthenticationRequest;
+import com.cengizhanyavuz.todolist.auth.AuthenticationResponse;
+import com.cengizhanyavuz.todolist.business.services.impl.AuthenticationService;
+import com.cengizhanyavuz.todolist.auth.RegisterRequest;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
@@ -14,10 +18,10 @@ import java.io.IOException;
 @RequestMapping("/api/v1/auth")
 @CrossOrigin(origins = FrontendUrl.REACT_URL)
 @RequiredArgsConstructor
-public class AuthenticationController {
+public class AuthenticationApi {
 
   private final AuthenticationService service;
-  private static final Logger logger = LoggerFactory.getLogger(AuthenticationController.class);
+  private static final Logger logger = LoggerFactory.getLogger(AuthenticationApi.class);
 
 
   @PostMapping("/register")

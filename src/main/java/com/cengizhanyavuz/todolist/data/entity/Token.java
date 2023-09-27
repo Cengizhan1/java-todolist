@@ -1,6 +1,6 @@
-package com.cengizhanyavuz.todolist.user.token;
+package com.cengizhanyavuz.todolist.data.entity;
 
-import com.cengizhanyavuz.todolist.user.user.User;
+import com.cengizhanyavuz.todolist.enums.TokenType;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

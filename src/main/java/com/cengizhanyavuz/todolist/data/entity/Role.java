@@ -1,15 +1,15 @@
-package com.cengizhanyavuz.todolist.user.user;
+package com.cengizhanyavuz.todolist.data.entity;
 
+import com.cengizhanyavuz.todolist.enums.Permission;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 
-import java.util.Collections;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-import static com.cengizhanyavuz.todolist.user.user.Permission.*;
+import static com.cengizhanyavuz.todolist.enums.Permission.*;
 
 @RequiredArgsConstructor
 public enum Role {
