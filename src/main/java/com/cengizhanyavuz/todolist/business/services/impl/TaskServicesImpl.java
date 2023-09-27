@@ -59,16 +59,17 @@ public class TaskServicesImpl implements ITaskServices<TaskDto, TaskEntity> {
 
     // LIST
     @Override
-    public List<TaskDto> taskServiceList() {
-        Iterable<TaskEntity> entityIterable=  iTaskRepository.findAll();
-        List<TaskDto> taskDtoList=new ArrayList<>();
-        for (TaskEntity entity:  entityIterable) {
-            TaskDto taskDto=entityToDto(entity);
+    public List<TaskDto> taskServiceList(Long id) {
+        List<TaskEntity> entityList = iTaskRepository.findByRelationProjectEntityProjectId(id);
+        List<TaskDto> taskDtoList = new ArrayList<>();
+        for (TaskEntity entity : entityList) {
+            TaskDto taskDto = entityToDto(entity);
             taskDtoList.add(taskDto);
         }
-        log.info("Liste Sayısı: "+taskDtoList.size());
+        log.info("Liste Sayısı: " + taskDtoList.size());
         return taskDtoList;
     }
+
 
     // FIND
     @Override

@@ -25,9 +25,17 @@ i18n.use(initReactI18next).init({
                     'all_delete': "Delete All Tasks",
                     'all_done_task_delete': "Delete All Done Tasks",
                     'logout':"Logout",
-                    'welcome':"Welcomne :"
+                    'welcome':"Welcomne :",  
+                    'project_name': 'Project Name',
+                    'project_description': 'Project Description',
+                    'project_state': 'Project State',              
+                    'detailsButton': 'View detils',
+                    'searchPlaceholder': 'Search in Projects',
+                    'createProject': 'Create Project',
+                    'deleteButton': 'Delete',
+                    'deleteConfirmation': ' Silmek istediğinize emin misiniz ?'
 
-
+        
                 }
             },
         tr:
@@ -52,9 +60,16 @@ i18n.use(initReactI18next).init({
                     'all_delete': "Hepsini Sil",
                     'all_done_task_delete': "Tamamlanan taskları sil",
                     'logout':"ÇIKIŞ YAP",
-                    'welcome':"Hoşgeldin :"
-
-
+                    'welcome':"Hoşgeldin :",
+                    'project_name': 'Proje Adı',
+                    'project_description': 'Proje Açıklaması',
+                    'project_state': 'Proje Durumu',
+                    'projects': 'Projeler',
+                    'detailsButton': 'Detayı gör',
+                    'searchPlaceholder': 'Projelerde Ara',
+                    'createProject': ' Proje Ekle',
+                    'deleteButton': 'Sil',
+                    'deleteConfirmation': ' Silmek istediğinize emin misiniz ?'
 
                 }
             }

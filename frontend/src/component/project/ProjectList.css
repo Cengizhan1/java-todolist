@@ -1,0 +1,45 @@
+.custom-card {
+    border-radius: 10px;
+    transition: transform 0.3s;
+    margin: 0 auto; 
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  
+  .custom-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .custom-id {
+    font-size: 24px; 
+  }
+  
+  .custom-name {
+    font-size: 24px;
+    text-align: right;
+  }
+  
+  .custom-card .card-title {
+    font-size: 1.5rem;
+  }
+  
+  .custom-card .custom-id {
+    font-size: 1rem; 
+  }
+  
+  .project {
+  
+    border-radius: 10px;
+    margin-bottom: 10px;
+    width: 50%;
+  }
+  
+  .btn-primary {
+    margin-top: 10px;
+    margin-left: 10px; 
+  }
+  .btn-danger {
+    margin-top: 10px;
+    margin-left: 20px; 
+  }
+  

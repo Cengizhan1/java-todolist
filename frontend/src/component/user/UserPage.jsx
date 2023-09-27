@@ -37,7 +37,7 @@ const UserPage = () => {
       localStorage.setItem('accessToken', response.data.access_token);
       localStorage.setItem('username', response.data.firstname);
 
-      window.location.href = "/task/list";
+      window.location.href = "/project/list";
     } catch (error) {
       console.error('Register error:', error);
       setError(error.response.data.message);
@@ -56,7 +56,7 @@ const UserPage = () => {
 
       localStorage.setItem('accessToken', response.data.access_token);
       localStorage.setItem('username', response.data.firstname);
-      window.location.href = "/task/list";
+      window.location.href = "/project/list";
 
     } catch (error) {
       console.error('Login error:', error);

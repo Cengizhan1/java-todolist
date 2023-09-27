@@ -12,7 +12,7 @@ public interface ITaskApi <D> {
     public ResponseEntity<?>  taskApiCreate(D d);
 
     // LIST
-    public ResponseEntity<List<D>>  taskApiList();
+    public ResponseEntity<List<D>>  taskApiList(Long id);
 
     // FIND BY
     public ResponseEntity<?>  taskApiFindById(Long id);

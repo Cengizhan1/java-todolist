@@ -36,8 +36,8 @@ class TaskApi {
   }
 
   // LIST
-  taskApiList() {
-    return this.api.get(`${TASK_URL}/list`);
+  taskApiList(projectId) {
+    return this.api.get(`${TASK_URL}/list/${projectId}`);
   }
 
   // FIND

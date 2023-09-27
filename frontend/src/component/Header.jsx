@@ -26,7 +26,7 @@ class Header extends Component {
             <React.Fragment>
                 <nav className="navbar navbar-expand-md navbar-dark bg-dark">
                     <div className="container">
-                        <Link className="navbar-brand" to="task/list"> <i className={this.props.logo}></i></Link>
+                        <Link className="navbar-brand" to="project/list"> <i className={this.props.logo}></i></Link>
                         <button
                             className="navbar-toggler d-lg-none"
                             type="button"
@@ -41,9 +41,9 @@ class Header extends Component {
                         <div className="collapse navbar-collapse" id="collapsibleNavId">
                             <ul className="navbar-nav me-auto mt-2 mt-lg-0">
                                 <li className="nav-item">
-                                    <a className="nav-link active" href="#" aria-current="page">
+                                    <Link className="nav-link active" to="project/list" aria-current="page">
                                         Home <span className="visually-hidden">(current)</span>
-                                    </a>
+                                    </Link>
                                 </li>
                             </ul>
 

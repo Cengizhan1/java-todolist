@@ -38,9 +38,9 @@ public class TaskApiImpl implements ITaskApi<TaskDto> {
     // LIST
     // http://localhost:4444/ task/api/v1/list
     @Override
-    @GetMapping(value = "/list")
-    public ResponseEntity<List<TaskDto>> taskApiList() {
-        return ResponseEntity.status(HttpStatus.OK).body(iTaskServices.taskServiceList());
+    @GetMapping(value = "/list/{projectId}")
+    public ResponseEntity<List<TaskDto>> taskApiList(@PathVariable(name = "projectId") Long id) {
+        return ResponseEntity.status(HttpStatus.OK).body(iTaskServices.taskServiceList(id));
     }
 
     // FIND

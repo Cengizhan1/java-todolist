@@ -15,7 +15,7 @@ public interface ITaskServices<D, E> {
     public D taskServiceCreate(D d);
 
     // LIST
-    public List<D> taskServiceList();
+    public List<D> taskServiceList(Long id);
 
     // FIND BY
     public D taskServiceFindById(Long id);
