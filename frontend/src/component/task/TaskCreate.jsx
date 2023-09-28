@@ -20,6 +20,7 @@ function TaskCreate({ t }) {
 
   // STATE
   const [taskName, setTaskName] = useState('');
+  const [projectId, setProjectId] = useState('');
   const [taskDescription, setTaskDescription] = useState('');
   const [state, setTaskState] = useState('');
   const [priorityLevel, setPriorityLevel] = useState('');
@@ -27,6 +28,7 @@ function TaskCreate({ t }) {
   const [tags, setTags] = useState('');
   const [error, setError] = useState({
     taskName: '',
+    projectId: '',
     taskDescription: '',
     state: '',
     priorityLevel: '',
@@ -48,6 +50,7 @@ function TaskCreate({ t }) {
 
     const newTask = {
       taskName,
+      projectId,
       taskDescription,
       state,
       priorityLevel,
@@ -58,6 +61,7 @@ function TaskCreate({ t }) {
 
     setError({
       taskName: '',
+      projectId: '',
       taskDescription: '',
       state: '',
       priorityLevel: '',
@@ -83,6 +87,8 @@ function TaskCreate({ t }) {
     // onChange
     if (name === "taskName") {
       setTaskName(value);
+    } else if (name === "projectId") {
+      setProjectId(value);
     } else if (name === "taskDescription") {
       setTaskDescription(value);
     } else if (name === "state") {
@@ -116,6 +122,26 @@ function TaskCreate({ t }) {
             {error.taskName && (
                 <div className="alert alert-danger" role="alert">
                   {error.taskName}
+                </div>
+            )}
+          </div>
+
+          <div className="form-group">
+            <span>{t('projectId')}</span>
+            <input
+                type="number" 
+                className="form-control"
+                placeholder={t('projectId')}
+                required={true}
+                autoFocus={true}
+                id="projectId"
+                name="projectId"
+                value={projectId}
+                onChange={taskOnChange}
+            />
+            {error.taskName && (
+                <div className="alert alert-danger" role="alert">
+                  {error.projectId}
                 </div>
             )}
           </div>

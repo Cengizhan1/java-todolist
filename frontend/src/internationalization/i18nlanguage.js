@@ -33,7 +33,10 @@ i18n.use(initReactI18next).init({
                     'searchPlaceholder': 'Search in Projects',
                     'createProject': 'Create Project',
                     'deleteButton': 'Delete',
-                    'deleteConfirmation': ' Silmek istediğinize emin misiniz ?'
+                    'deleteConfirmation': ' Are you sure delete ?',
+                    'deleteAllConfirmation': 'Are you sure all delete ?',
+                    'deleteDoneConfirmation': 'Are you sure all done delete ?',
+                    'projectId':'Project ID'
 
         
                 }
@@ -69,8 +72,10 @@ i18n.use(initReactI18next).init({
                     'searchPlaceholder': 'Projelerde Ara',
                     'createProject': ' Proje Ekle',
                     'deleteButton': 'Sil',
-                    'deleteConfirmation': ' Silmek istediğinize emin misiniz ?'
-
+                    'deleteConfirmation': ' Silmek istediğinize emin misiniz ?',
+                    'deleteAllConfirmation': ' Tümünü silmek istediğinize emin misiniz ?',
+                    'deleteDoneConfirmation':' Tüm tamamlanmışları silmek istediğinize emin misiniz ?',
+                    'projectId':'Proje ID'
                 }
             }
     },

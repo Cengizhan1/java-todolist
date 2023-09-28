@@ -23,6 +23,7 @@ function TaskUpdate({ t }) {
     // STATE
     const [id, setID] = useState(null);
     const [taskName, setTaskName] = useState('');
+    const [projectId, setProjectId] = useState('');
     const [taskDescription, setTaskDescription] = useState('');
     const [state, setTaskState] = useState('');
     const [priorityLevel, setPriorityLevel] = useState('');
@@ -30,6 +31,7 @@ function TaskUpdate({ t }) {
     const [tags, setTags] = useState('');
     const [error, setError] = useState({
         taskName: '',
+        projectId:'',
         taskDescription: '',
         state: '',
         priorityLevel: '',
@@ -50,6 +52,7 @@ function TaskUpdate({ t }) {
             .then((response) => {
                 console.log(response.data);
                 setTaskName(response.data.taskName);
+                setProjectId(response.data.projectId);
                 setTaskDescription(response.data.taskDescription);
                 setTaskState(response.data.state);
                 setPriorityLevel(response.data.priorityLevel);
@@ -67,6 +70,7 @@ function TaskUpdate({ t }) {
 
         const newTask = {
             taskName,
+            projectId,
             taskDescription,
             state,
             priorityLevel,
@@ -77,6 +81,7 @@ function TaskUpdate({ t }) {
 
         setError({
             taskName: '',
+            projectId: '',
             taskDescription: '',
             state: '',
             priorityLevel: '',
@@ -117,6 +122,26 @@ function TaskUpdate({ t }) {
                     {error.taskName && (
                         <div className="alert alert-danger" role="alert">
                             {error.taskName}
+                        </div>
+                    )}
+                </div>
+
+                <div className="form-group">
+                    <span>{t('projectId')}</span>
+                    <input
+                        type="number"
+                        className="form-control"
+                        placeholder={t('projectId')}
+                        required={true}
+                        autoFocus={true}
+                        id="projectId"
+                        name="projectId"
+                        onChange={(event) => { setProjectId(event.target.value) }}
+                        value={projectId}
+                    />
+                    {error.projectId && (
+                        <div className="alert alert-danger" role="alert">
+                            {error.projectId}
                         </div>
                     )}
                 </div>

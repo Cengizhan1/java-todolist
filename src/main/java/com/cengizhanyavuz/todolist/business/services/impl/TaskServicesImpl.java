@@ -93,6 +93,7 @@ public class TaskServicesImpl implements ITaskServices<TaskDto, TaskEntity> {
         if(taskFindDto!=null){
             TaskEntity taskEntity=dtoToEntity(taskFindDto);
             taskEntity.setTaskName(taskDto.getTaskName());
+            taskEntity.setRelationProjectEntity(iProjectRepository.findById(taskDto.getProjectId()).get());
             taskEntity.setTaskDescription(taskDto.getTaskDescription());
             taskEntity.setState(taskDto.getState());
             taskEntity.setPriorityLevel(taskDto.getPriorityLevel());
